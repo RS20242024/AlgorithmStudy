@@ -1,3 +1,21 @@
 Show the comparisons the naive string matcher makes for the pattern P = 0001 in the text T = 000010001010001.
 
-
+C++ code
+////////
+string t = "000010001010001";
+string p = "0001";
+bool flag = false;
+    
+for(int i=0; i<=t.length()-p.length(); ++i){ // here the <= is important otherwise you will miss the last match
+    bool match =true;
+      for(int j =0; j<p.length(); ++j){
+          if(t[i+j] != p[j]){
+                match = false;
+                break;
+            }
+      }
+      if(match){
+            cout<<i<<endl;
+      }
+        
+}
